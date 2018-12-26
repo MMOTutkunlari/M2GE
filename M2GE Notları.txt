@@ -1,0 +1,84 @@
+Metin2'de Syserr Çeşitleri
+
+
+Server tabanlı
+Syserr => hataları gösterir.
+Syslog => İşlem kayıtlarını tutar.
+
+Auth => kullanıcı giriş işlemleri
+Channals => Kanallar
+DB => database
+
+
+Client Tabanlı;
+Client tabanlı syserr'de sadece istemci ile alakalı sorunlar yazılır. Oyunun klasörü içinde syserr.txt dosyasında bulur.
+
+-----------------------------------------------------------------
+Metin2 quest dosyaları derlendiği zaman object klasöründe bulunur.
+3 ayrı dosyaya parçalanır.
+.arg => when satırında yazılı olan
+.script => when blogunun içinde yazılı olan
+.when => getqf bilgilerini tutar.
+-------------------------------------------------
+when çeşitleri
+click (x) => npcye tıklandığında hiçbir chat penceresi gelmeden işlem yaptırır.
+kill (x) => bir slotu öldürdüğünüzde çalışacak olan.
+timer (x) => zamanlayıcı
+levelup (x) => level aldığınızda olacaklar.
+login (x) => oyuna girişte yazılaaklar.
+logout (x) => oyuna çıkışta yazılacaklar.
+button (x) => lettera tıkladığımızda yapılacaklar.
+info (x) => lettera tıkladığımızda yapılacaklar.
+chat (x) => NPC'ye tıkladığımızda konuşma seçeneklerini oluşturur.
+in (-) => bilmiyorum.
+out (-) => bilmiyorum.
+use (x) => İteme sağ tıkladığımızda yapılacaklar.
+server_timer (x) => zamanlayıcı.
+enter (-) => bilmiyorum.
+leave (-) => bilmiyorum.
+letter (x) => sol tarafta iconların çıkmasını sağlar.
+take (x) => eşyayı npcye sürüklediğimizde yapılacaklar.
+target (x) => NPC başında çıkan sarı ok.
+party_kill (x) => parti ile yapılacak işlemler (at zırhlama görevi.)
+unmount (-) => Binekten inmek.
+pick (-) => kazı işlemi
+sig_use (x) => birden fazla item aynı işlemi yapılacaksa special_item_group'a grup oluşturulur onun adı verilir.
+item_informer (-) => eşya özelliklerini sıralar.
+die (x) => Karakteriniz ölünce yapılacaklar.
+
+------------------------------------------
+1. anlatım: letter, button or info.
+send_letter(string) => Sol taraftaki iconun altında yazan isim. (string değer alır.)
+say_title(string) => Quest yazı penceresinde sarı yazar. Başlıklarda kullanılır.
+say_reward(string) => turuncu yazmasını sağlar.
+string.format() => değerli yazılarda kullanılır.
+
+-----------------------------------
+2. anlatım: login ve logout ve levelup
+notice(string) => GM'lerin yazdığı gibi uyarı çıkarır sadece oyuncu kendisine gözükür.
+notice_all(string) => GM'lerin yazdığı gibi uyarı çıkarır tüm oyuncular görür.
+pc.get_name() => Karakterin adını alır.
+pc.get_level() => karakterin levelini yazar.
+
+----------------------------------------------
+3. anlatım: chat, click, target
+mob_name(int) => İnt değerine mob vnumunu yazdığınız zaman mob adını yansıtır.
+find_npc_by_vnum(int) => Haritada en yakın noktadaki npcnin kordinatlarını alır.
+target.delete() => NPC'nin üstündeki sarı oku silmek için.
+
+4. anlatım: kill, die, party_kill
+syschat(string) => chat menüsüne veri girer.
+
+5. anlatım: use, sig_use
+-----------------------
+6. anlatım: take
+item. npcye sürüklenen itemin bilgilerini alır.
+item.get_name() => npcye sürüklenen itemin adını verir.
+
+------------------------
+7. anlatım: timer
+loop_timer(string, boolean) => timer başlatır.
+---------------------------------
+8. anlatım: server_timer
+clear_server_timer(string) => Hali hazırda çalışan server timerini kapatmak için kullanılır.
+server_loop_timer(string, boolean) => Server timeri atar.
