@@ -1,3 +1,8 @@
+-- Metin2 Geliþtiricilik Eðitimi | Quest Dersleri | Bölüm 32 when (letter, button, info)
+-- MMOTutkunlari.com | Whistle | Eray Öksüz
+-- 26.12.2018 - 14.27
+-- Bu dosyanýn videosunu izlemek istiyorsanýz: https://youtu.be/lZortPX54ew
+
 quest egitim_01 begin
 	state start begin
 		when letter begin

@@ -1,3 +1,9 @@
+-- Metin2 Geliþtiricilik Eðitimi | Quest Dersleri | Bölüm 33 when (login, logout, levelup)
+-- MMOTutkunlari.com | Whistle | Eray Öksüz
+-- 26.12.2018 - 14.27
+-- Bu dosyanýn videosunu izlemek istiyorsanýz: 
+
+
 quest egitim_02 begin
 	state start begin
 		when login begin

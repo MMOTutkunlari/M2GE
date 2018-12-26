@@ -1,3 +1,8 @@
+-- Metin2 Geliþtiricilik Eðitimi | Quest Dersleri | Bölüm 36 when (use, sig_use)
+-- MMOTutkunlari.com | Whistle | Eray Öksüz
+-- 26.12.2018 - 14.27
+-- Bu dosyanýn videosunu izlemek istiyorsanýz: 
+
 quest egitim_05 begin
 	state start begin
 		-- when 70058.use or 76042.use begin
