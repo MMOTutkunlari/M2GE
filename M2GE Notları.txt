@@ -86,82 +86,80 @@ server_loop_timer(string, boolean) => Server timeri atar.
 -----------------------------------------------------
 1. Anlatım: pc fonksiyonları;
 PC.Get fonksiyonları.
-pc.get_account => string değer dönderir. Hesap adını verir.
-pc.get_account_id => int değer döndürür. Hesap idsini.
-pc.get_alignment => int değer döndürür. Kahramanlık derecesi.
-pc.get_dx => int değer döndürür. Savunmamuzu
-pc.get_empire => int değer döndürür. Krallığı döndürür. (1=> kırmızı, 2=> Sarı, 3=> Mavi)
-pc.get_empty_inventory_count => int değer döndürür. Envanterdaki boş olan kutuların sayısını.
-pc.get_equip_refine_level => int değer döndürür. +oranını
-pc.get_exp => int değer döndürür. Karakterdeki exp miktarı.
-pc.get_exp_level
-pc.get_exp_level0
-pc.get_gm_level => int değer döndürür. Karakterin gm seviyesi.
-pc.get_gold => int değer döndürür. Yang miktarını verir.
-pc.get_guild => int değer döndürür. Lonca varsa idsini verir yoksa 0 döndürür.
-pc.get_horse_level => int değer döndürür. At levelini verir.
-pc.get_hp => İnt. Hayat Puanı değerini döndürür.
-pc.get_ht
-pc.get_informer_item
-pc.get_informer_type
-pc.get_ip0
-pc.get_iq
-pc.get_job => int değer döndürür. Karakterin cinsiyetini verir.
-pc.get_killee_drop_pct 
-pc.get_language
-pc.get_language2
-pc.get_leadership
-pc.get_level => İnt değer döndürür. Karakterin levelini verir.
-pc.get_local_x => İnt değer dönüdür. Karakterin bulunduğu konumu verir. 
-pc.get_local_y => İnt değer döndürür. Karakterin bulunduğu konumu verir.
-pc.get_logoff_interval
-pc.get_map_index => İnt değer döndürür. Karakterin bulunduğu haritanın idsini verir.
-pc.get_max_hp => int değer döndürür. Karakterin alabileceği maxsimum hayat puanı.
-pc.get_max_sp =>  int değer döndürür. Karakterin alabileceği maxsimum hayat puanı.
-pc.get_money => int değer döndürür.
-pc.get_name => string değer döndürür. Karakterinizin adını verir.
-pc.get_next_exp => int değer döndürür. Bir sonraki levele ulaşabilmek için gerekli exp miktarını verir.
-pc.get_part
-pc.get_player_id => int değer döndürür. Karakterin idsini verir.
-pc.get_playtime => int değer döndürür. Karakterin toplam oyun saatini verir.
-pc.get_premium_remain_sec => int değer döndürür. Premium abonelik süresini verir.
-pc.get_race => int değer döndürür. Karakter sınıfını verir.
-pc.get_real_alignment => int değer döndürür. Sıralama puanı.
-pc.get_sex => int, cinsiyet
-pc.get_sig_items => int, gruplandırılmış itemleri verir.
-pc.get_skill_group => Karakterin yetenek grubunu verir. (Bedensel - Zihinsel)
-pc.get_skill_level => int arg alır, int değer döndürür. Yetenek levelini verir.
-pc.get_skill_point => int değer döndürür. Yetenek puanlarını verir.
-pc.get_socket_items => int - dizi, karakterdeki itemlerin socketlerini verir.
-pc.get_sp => int, mana puanını verir.
-pc.get_special_ride_vnum
-pc.get_st
-pc.get_start_location
-pc.get_vid => karakterin auth idsi.
-pc.get_war_map
-pc.get_weapon => int değer döndürür. Karakterin elinde olan silahın idsini verir.
-pc.get_wear => int değer döndürür. İdsini verdiğimiz itemin wear flaglarını döndürür.
-pc.get_x => int değer döndürür. Karakterin bulunduğu konumun x değerini verir.
-pc.get_y => int değer döndürür. Karakterin bulunduğu konumun y değerini verir.
-pc.getarmor => int değer döndürür. Elbisesnini idsini verir.
-pc.getcheque
-pc.getcurrentmapindex => int değer döndürür. Bulunduğu haritanın idsini verir.
-pc.getempire => int değer döndürür. Krallığı verir. (1 => kırmızı, 2 => sarı, 3 => mavi)
-pc.getf => 2 string argumanı var. 1. argumant => quest adı. 2 argument => değer. int değer döndürür. Argument ile belirlenen değişkenin valuesini verir.
-pc.getgold => int değer döndürür. Karakterin yang miktarını verir.
-pc.getguild => int değer döndürür. Karakterin lonca idsini verir.
-pc.gethp => int değer döndürür. Karakterin hayat puanını verir.
-pc.getleadership
-pc.getmaxhp => int değer dönüdrür. Karakterin maks hayat puanını verir.
-pc.getmaxsp => int değer döndürür. Karakterin maks manasını verir.
-pc.getmoney => int değer döndürür. Karakterin Yang miktarını verir.
-pc.getname => string deeğr döndürür. Karakterin adını verir.
-pc.getplaytime => int değer döndürür. Karakterin toplam oyunda geçirdiği zamanı verir.
-pc.getqf => 1 argument alır. QF değeri verirlir. İnt döndürür. Değerin valuesini döndürür.
-pc.getsp => int değer döndürür. Karkaterin mana puanını verir.
-pc.getweapon => int değer döndürür. Karakterin elindeki eşyanın idsini verir.
-pc.getx => int değer döndürür. Karakterin bulunduğu konumun x değerini verir.
-pc.gety => int değer döndürür. Karakterin bulundupu konumun y değerini verir.
+pc.get_account() : String değer döndürür. Hesap adını verir.
+pc.get_account_id() : Int değer döndürür. Hesap idsini verir.
+pc.get_alignment() : Int değer döndürür. Karakterin sıralama derecesini verir.
+pc.get_dx() : Int değer döndürür. Karakterin dex puanını verir.
+pc.get_empire() : Int değer döndürür. Karakterin krallığını verir. (1: Kırmızı, 2: Sarı, 3: Mavi)
+pc.get_empty_inventory_count() : Int değer döndürür. Karakterin envanterinde boş olan slot sayısını verir.
+pc.get_equip_refine_level(LuaNumber cell) : 1 argument alır. Int değerindedir. Envanterde slot idsini gönderdiğiniz zaman o slottaki eşyanın refine levelini yani + değerini verir.
+pc.get_exp() : Int değer döndürür. Karakterin EXP bilgisini verir.
+pc.get_exp_level() : Int değer döndürür. Karakterin EXP kutusunun bilgisini verir. Kaç kutu dolu ise o kadar sayı döndürür.
+pc.get_gm_level() : Int değer döndürür. Karakterin GM yetkisini verir. (1: Player, 2: LOW_WIZARD, 3: GOD, 4: HIGH_WIZARD, 5: IMPLEMENTOR)
+pc.get_gold() : Int değer döndürür. Karakterin Yang miktarını verir.
+pc.get_guild() : Int değer döndürür. Karakterin loncasının idsini verir. Lonca yoksa false döndürür.
+pc.get_horse_level() : Int değer döndürür. Karakter at seviyesini verir. Atı yoksa false döndürür.
+pc.get_hp() : Int değer döndürür. Karakterin mevcut hayat puanını verir.
+pc.get_ht() : Int değer döndürür. Karakterin VIT puanını verir.
+pc.get_informer_item()
+pc.get_informer_type()
+pc.get_ip0() : String değer döndürür. Karakterin ip bilgisini verir.
+pc.get_iq() : Int değer döndürür. Karakterin INT puanını verir.
+pc.get_job(): Int değer döndürür. Karakterin cinsiyetini verir.
+pc.get_killee_drop_pct()
+pc.get_language()
+pc.get_leadership()
+pc.get_language2()
+pc.get_level() : Int değer döndürür. Karakterin levelini verir.
+pc.get_local_x() : Int değer döndürür. Client tabanlı karakterin bulunduğu konumun x değerini verir.
+pc.get_local_y() : Int değer döndürür. Client tabanlı karakterin bulunuduğu konumun y değerini verir.
+pc.get_logoff_interval()
+pc.get_map_index() : Int değer döndürür. Karakterin bulunduğu haritanın idsini verir.
+pc.get_max_hp() : Int değer döndürür. Karakterin alabileceği maksimum hp puanını verir.
+pc.get_max_sp() : Int değer döndürür. Karakterin alabileceğini maksimum sp puanını verir.
+pc.get_money() : Int değer döndürür. Karakterin Yang miktarını verir.
+pc.get_name() : String değer döndürür. Karakterin adını verir.
+pc.get_next_exp() : Int değer döndürür. Bir sonraki level için gerekli olan EXP miktarını verir.
+pc.get_part()
+pc.get_player_id() : Int değer döndürür. Karakterin idsini verir.
+pc.get_playtime() : Int değer döndürür. Toplam oyunda geçirilen zamanı verir.
+pc.get_premium_remain_sec() : Int değer döndürür. Premium süresini verir.
+pc.get_race() : Int değer döndürür. Karakterin sınıfını verir.
+pc.get_real_alignment() : Int değer döndürür. Karakterin sıralama puanını verir.
+pc.get_sex() : Int değer döndürür. Karakterin cinsiyetini verir.
+pc.get_sig_items(LuaNumber group_vnum) : Int argument alır. Dizi döndürür. Argument ile gönderilmiş eşya grubunun eşya listesini verir.
+pc.get_skill_group() : Int değer döndürür. Karakterin seçmiş olduğu yetenek grubunu verir. Örn: Bedensel, Zihinsel
+pc.get_skill_level(LuaNumber vnum) : 1 argument alır. Int döndürür. Argument ile gönderilen yetenek idsinin seviyesini verir. Örn: pc.get_skill_level(31) => Suikast yeteneğinin seviyesini verir.
+pc.get_skill_point() : Int değer döndürür. Karakterin kullanmamış olduğu yetenek puanlarının miktarını verir.
+pc.get_sockets_item() : Dizi döndürür. Karakterin envanterinde bulunan eşyaların socket bilgisini listeler.
+pc.get_sp() : Int değer döndürür. Karakterin SP miktarını verir.
+pc.get_special_ride_vnum() : Int değer dönderir. Special item bilgilerini verir.
+pc.get_st() : Int değer döndürür. Karakterin STR puanını verir.
+pc.get_start_location()
+pc.get_vid() : Int değer döndürür. Karakterin auth idsini verir.
+pc.get_war_map()
+pc.get_weapon() : Int değer döndürür. Karakterin eline giymiş olduğu silahn vnum değerini verir. Eli boşsa false döndürür.
+pc.get_wear(LuaNumber cell) : 1 tane int argument alır. Int değer döndürür. Argument ile gönderilen veri ile belirlenen envanterdaki kutuda eşyanın wear flagını verir.
+pc.get_x() : Int değer döndürür. Server tabanlı karakterin x koordinatını verir.
+pc.get_y() : Int değer döndürür. Server tabanlı karakterin y koordinatını verir.
+pc.getarmor() : Int değer döndürür. Karakterin üstüne giydiği zırhın vnumunu verir. Eğer yoksa false döndürür.
+pc.getcheque() : Int değer döndürür. Karakterin Won bilgisini verir.
+pc.getcurrentmapindex() : Int değer döndürür. Karakterin bulunduğu haritanın idsini verir.
+pc.getempire() : Int değer döndürür. Karakterin krallığını verir. (1: Kırmızı, 2: Sarı, 3: Mavi)
+pc.getf(LuaString questname, LuaString flagname) : 2 tane string argument alır. 1. quest adı, 2. flag adı. Int değer döndürür. quest veritabanına eklenen değeri döndürür.
+pc.getgold() : Int değer döndürür. Karakterin Yang miktarını verir.
+pc.getguild() : Int değer döndürür. Karakterin loncasının idsini verir. Lonca yoksa false döndürür.
+pc.gethp() : Int değer döndürür. Karakterin mevcut hayat puanını verir.
+pc.getleadership()
+pc.getmaxhp() : Int değer döndürür. Karakterin alabileceği maksimum hp puanını verir.
+pc.getmaxsp() : Int değer döndürür. Karakterin alabileceği maksimum sp puanını verir.
+pc.money() : Int değer döndürür. Karakterin Yang miktarını verir.
+pc.getplaytime() : Int değer döndürür. Toplam oyunda geçirilen zamanı verir.
+pc.getqf(LuaString flag) : 1 string argument alır. Int döndürür. Çalışan questin flag değerini quest veritabanında arar ve valuesini döndürür.
+pc.getsp() : Int değer döndürür. Karakterin mevcut mana puanını verir.
+pc.getweapon() : Int değer döndürür. Karakterin eline giymiş olduğu silahn vnum değerini verir. Eli boşsa false döndürür.
+pc.getx() : Int değer döndürür. Server tabanlı karakterin x koordinatını verir.
+pc.gety() : Int değer döndürür. Server tabanlı karakterin y koordinatını verir.
 
 2. Anlatı, item fonksiyonları;
 item.add_attr0
