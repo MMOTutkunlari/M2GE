@@ -162,53 +162,57 @@ pc.getx() : Int değer döndürür. Server tabanlı karakterin x koordinatını 
 pc.gety() : Int değer döndürür. Server tabanlı karakterin y koordinatını verir.
 
 2. Anlatı, item fonksiyonları;
-item.add_attr0
-item.can_over9refine
-item.change_attr0
-item.change_to_over9
-item.clear_attr0
-item.copy_and_give_before_remove
-item.count_attr0
-item.get_addon_type
-item.get_antiflag0
-item.get_apply0
-item.get_attr0
-item.get_attribute_set_index
-item.get_cell
-item.get_count
-item.get_id
-item.get_immuneflag0
-item.get_level
-item.get_level_limit
-item.get_name
-item.get_over9_material_vnum
-item.get_refine_vnum
-item.get_seal_date
-item.get_shop_cheque
-item.get_shop_price
-item.get_size
-item.get_socket
-item.get_sub_type
-item.get_type
-item.get_value
-item.get_vnum
-item.get_wearflag0
-item.has_antiflag0
-item.has_flag
-item.has_immuneflag0
-item.has_wearflag0
-item.is_available0
-item.is_sealed
-item.next_refine_vnum
-item.over9refine
-item.remove
-item.select
-item.select_cell
-item.set_attr0
-item.set_count0
-item.set_seal_date
-item.set_shop_cheque
-item.set_shop_price
-item.set_socket
-item.set_value
-item.start_realtime_expire
+
+item.can_over9refine() : Eşyanın +9'dan sonra dönüşümü var mı diye kontrol eder. Boolean döndürür. (Varsa: 1, Yoksa: 0)
+item.change_to_over9() : Eşyanın dönüşümü değiştirir.
+item.copy_and_give_before_remove(LuaNumber vnum) : Argumentte verdiğimiz vnum ile size bir eşya verir ve eşyayı siler.
+item.get_addon_type() : Eşyanın ortalama ve beceri hasarı alabilip almadığı addon_type değerini döndürür.
+// item.get_apply0()
+item.get_attribute_set_index()
+item.get_cell(LuaNumber cell) : Envanterinizdeki eşyanının bilgisini alır.
+item.get_count() : Eşyanın adetini döndürür. Int olarak.
+item.get_id() : Eşyanın idsini. Int olarak.
+item.get_level() : Eşyanın + değerini döndürür. Int olarak.
+item.get_level_limit() : Eşyanın level limitini alır.
+item.get_name() : Eşyanın locale name değerini döndürür.
+item.get_over9_material_vnum(LuaNumber vnum) : +9'dan sonra dönüşen eşyanın dönüşüm malzemelerini döndürür.
+item.get_refine_vnum(LuaNumber vnum) : Eşyanın refine (geliştirme) vnumunu alır.
+// item.get_seal_date()
+// item.get_shop_cheque()
+item.get_shop_price() : NPC'de eşyanın satılan fiyatı.
+item.get_size() : Eşyanın envanterde kaç slot kapladığının bilgisini verir.
+item.get_socket(LuaNumber index) : Eşyaya kakılan taşları veya eşyanın süresinin bilgilerini döndürür.
+item.get_sub_type() : Eşyanın alt türünün döndürür.
+item.get_type() : Eşyanın ana türünü döndürür.
+item.get_value(LuaNumber index) : Eşyanın value değerlerini döndürür.
+item.get_vnum() : Eşyanın item_proto'daki idsini döndürür.
+item.has_flag(LuaNumber value) : Argumentte verilen değerin eşyada olup olmadığını kontrol eder.
+// item.is_sealed()
+item.next_refine_vnum() : Bir sonraki + geliştirmedeki refine vnumu döndürür.
+item.over9refine() : Eşyanın +9'dan sonra dönüşümü var mı diye kontrol eder. Boolean döndürür. (Varsa: 1, Yoksa: 0)
+item.remove() : Eşyayı siler.
+item.select(LuaNumber item_id) : Eşyanın idsi ile eşyayı seçer. (Questlerde kullanmak için.)
+item.select_cell(LuaNumber cell) : Eşyayı envanterdaki cell numarası ile seçer. (Questlerde kullanmak için.)
+// item.set_seal_date()
+// item.set_shop_cheque()
+item.set_shop_price() : Eşyanın npcde satılan değerini değiştirmek.
+item.set_socket(LuaNumber index, LuaNumber value) : Eşyanın socket değerini değiştirir.
+item.set_value(LuaNumber index, LuaNumber value) : Eşyanın valuesini değiştirir.
+item.start_realtime_expire() : Eşyanın süresi varsa süresini başlatır.
+
+/** Martysama Source New Stuff **/
+item.get_wearflag0() : Eşyanın türünün bilgisini verir.
+item.has_wearflag0(luaNumber index) : Argument ile gönderilen veri eşyanın wearflagı ile uyuşup uyuşmadığını kontrol eder. 
+item.get_antiflag0(luaNumber index) : Argument ile gönderilen veri eşyanın antiflagı ile uyuşup uyuşmadığını kontrol eder.
+item.has_antiflag0() : Eşyanın antiflag (şaman giyemez vs.) bilgisini döndürür.
+item.get_immuneflag0() : Eşyanın immuneflag değerini döndürür.
+item.has_immuneflag0(luaNumber index) : Argument ile gönderilen veri eşyanın immuneflag ile uyuşup uyuşmadığını kontrol eder.
+item.add_attr0(LuaNumber mode) : Eşyaya efsun eklemeye yarar.
+item.change_attr0(LuaNumber mode) : Eşyanın efsunlarını değiştirir.
+item.clear_attr0(LuaNumber mode) : Eşyanın efsunlarını temizler
+item.count_attr0(LuaNumber mode) : Eşyanın efsunlarının değerini değiştirir.
+item.get_attr0() : Eşyanın efsunlarını döndürür.
+item.set_attr0(LuaNumber id1, LuaNumber value1, LuaNumber id2, LuaNumber value2, LuaNumber id3, LuaNumber value3, LuaNumber id4, LuaNumber value4, LuaNumber id5, LuaNumber value5, LuaNumber id6, LuaNumber value6, LuaNumber id7, LuaNumber value7): Eşyanın efsunlarını tek tek girmeye yarıyor.
+item.set_count0(LuaNumber count) : Eşyanın adetini değiştirir. 
+item.is_available0() : Kullanılan item.
+/** Martysama Source New Stuff **/
