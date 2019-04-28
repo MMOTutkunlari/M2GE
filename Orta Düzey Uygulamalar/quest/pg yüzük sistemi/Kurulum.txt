@@ -1,0 +1,24 @@
+locale/tr/item_desc.txt eklenecekler.
+40008	Perfect Master Yüzüğü	Seçtiğiniz bir beceriyi direk olarak Perfect Master yapar. 
+40009	Grand Master Yüzüğü	Seçtiğiniz bir beceriyi direk olarak Grand Master yapar.
+
+locale/tr/item_list.txt eklenecekler.
+40008	ETC	icon/item/71149.tga
+40009	ETC	icon/item/71148.tga
+
+item_proto.txt eklenecekler.
+40008	pyuzuk	ITEM_QUEST	USE_SPECIAL	1	NONE	NONE	NONE		0	0	0	0	0	LIMIT_NONE	0	LIMIT_NONE	0	APPLY_NONE	0	APPLY_NONE	0	APPLY_NONE	0	0	0	0	0	0	0	0	0	0
+40009	gyuzuk	ITEM_QUEST	USE_SPECIAL	1	NONE	NONE	NONE		0	0	0	0	0	LIMIT_NONE	0	LIMIT_NONE	0	APPLY_NONE	0	APPLY_NONE	0	APPLY_NONE	0	0	0	0	0	0	0	0	0	0
+
+item_names.txt eklenecekler.
+40008	Perfect Master Yüzüğü
+40009	Grand Master Yüzüğü
+
+player.item_proto tablosuna eklenecekler.
+INSERT INTO `item_proto` VALUES ('40008', 'pyuzuk', 'Perfect Master Yüzüğü', '18', '0', '0', '1', '0', '0', '0', '', '100000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '-1', '-1', '-1', '-1', '-1', '0', '0', '0');
+INSERT INTO `item_proto` VALUES ('40009', 'gyuzuk', 'Grand Master Yüzüğü', '18', '0', '0', '1', '0', '0', '0', '', '100000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '-1', '-1', '-1', '-1', '-1', '0', '0', '0');
+
+item_proto.xml üzerinden düzenleme yapıyorsanız.
+<ItemDef Vnum="40008" Name="pyuzuk" LocalizedName="Perfect Master Yüzüğü" Type="23" SubType="0" Weight="0" Size="1" AntiFlags="0" Flags="0" WearFlags="0" ImmuneFlags="0" Gold="0" ShopBuyPrice="0" LimitType0="0" LimitValue0="0" LimitType1="0" LimitValue1="0" ApplyType0="0" ApplyValue0="0" ApplyType1="0" ApplyValue1="0" ApplyType2="0" ApplyValue2="0" Value0="0" Value1="0" Value2="0" Value3="0" Value4="0" Value5="0" Socket0="0" Socket1="0" Socket2="0" RefinedVnum="0" RefineSet="0" AlterToMagicItemPercent="0" Specular="0" GainSocketPercent="0" AddonType="0"  />
+<ItemDef Vnum="40009" Name="gyuzuk" LocalizedName="Grand Master Yüzüğü" Type="23" SubType="0" Weight="0" Size="1" AntiFlags="0" Flags="0" WearFlags="0" ImmuneFlags="0" Gold="0" ShopBuyPrice="0" LimitType0="0" LimitValue0="0" LimitType1="0" LimitValue1="0" ApplyType0="0" ApplyValue0="0" ApplyType1="0" ApplyValue1="0" ApplyType2="0" ApplyValue2="0" Value0="0" Value1="0" Value2="0" Value3="0" Value4="0" Value5="0" Socket0="0" Socket1="0" Socket2="0" RefinedVnum="0" RefineSet="0" AlterToMagicItemPercent="0" Specular="0" GainSocketPercent="0" AddonType="0"  />
+	
