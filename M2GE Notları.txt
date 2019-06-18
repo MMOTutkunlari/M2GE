@@ -176,7 +176,7 @@ item.get_level() : Eşyanın + değerini döndürür. Int olarak.
 item.get_level_limit() : Eşyanın level limitini alır.
 item.get_name() : Eşyanın locale name değerini döndürür.
 item.get_over9_material_vnum(LuaNumber vnum) : +9'dan sonra dönüşen eşyanın dönüşüm malzemelerini döndürür.
-item.get_refine_vnum(LuaNumber vnum) : Eşyanın refine (geliştirme) vnumunu alır.
+item.get_refine_vnum() : Eşyanın refine (geliştirme) vnumunu alır.
 // item.get_seal_date()
 // item.get_shop_cheque()
 item.get_shop_price() : NPC'de eşyanın satılan fiyatı.
@@ -188,7 +188,7 @@ item.get_value(LuaNumber index) : Eşyanın value değerlerini döndürür.
 item.get_vnum() : Eşyanın item_proto'daki idsini döndürür.
 item.has_flag(LuaNumber value) : Argumentte verilen değerin eşyada olup olmadığını kontrol eder.
 // item.is_sealed()
-item.next_refine_vnum() : Bir sonraki + geliştirmedeki refine vnumu döndürür.
+item.next_refine_vnum(LuaNumber vnum) : Bir sonraki + geliştirmedeki refine vnumu döndürür.
 item.over9refine() : Eşyanın +9'dan sonra dönüşümü var mı diye kontrol eder. Boolean döndürür. (Varsa: 1, Yoksa: 0)
 item.remove() : Eşyayı siler.
 item.select(LuaNumber item_id) : Eşyanın idsi ile eşyayı seçer. (Questlerde kullanmak için.)
@@ -199,6 +199,7 @@ item.set_shop_price() : Eşyanın npcde satılan değerini değiştirmek.
 item.set_socket(LuaNumber index, LuaNumber value) : Eşyanın socket değerini değiştirir.
 item.set_value(LuaNumber index, LuaNumber value) : Eşyanın valuesini değiştirir.
 item.start_realtime_expire() : Eşyanın süresi varsa süresini başlatır.
+item.item_get_over9_material_vnum() : Dönüşüm için gerekli materyalleri dönderir.
 
 /** Martysama Source New Stuff **/
 item.get_wearflag0() : Eşyanın türünün bilgisini verir.
@@ -216,3 +217,37 @@ item.set_attr0(LuaNumber id1, LuaNumber value1, LuaNumber id2, LuaNumber value2,
 item.set_count0(LuaNumber count) : Eşyanın adetini değiştirir. 
 item.is_available0() : Kullanılan item.
 /** Martysama Source New Stuff **/
+
+
+3. anlatı npc komutları;
+
+npc.get_empire()	=> npc bulunduğu krallığın bilgisini.
+npc.get_guild	=> npcnin loncasını verir.
+npc.get_leader_vid	=> partynin liderinin vid değerini verir.
+npc.get_local_x0	=> local x koordinatını verir.
+npc.get_local_y0	=> local y koordinatını verir.
+npc.get_race	=> npcnin vnum değerini verir.
+npc.get_remain_hairdye_count
+npc.get_remain_skill_book_count
+npc.dec_remain_hairdye_count => mob 20031 idye sahipse true değerini dönderiyor.
+npc.dec_remain_skill_book_count => mob 20031 idye sahipse true değerini dönderiyor.
+npc.get_vid	=> npc vid değerini verir.
+npc.get_x0	=> npcnin x koordinatını verir.
+npc.get_y0	=> npcnin y koordinatını verir.
+npc.getrace	=> npcnin vnum değerini verir.
+npc.is_pc	=> bilgisayar oyuncusu ise true dönderir.
+npc.is_quest	=> quest npccsi ise true dönderir.
+npc.kill	=> npc öldürür.
+npc.lock	=> npcyi kilitler.
+npc.open_shop(LuaNumber shop_vnum)	=> npcnin sattığı ürünleri gösterir.
+npc.purge	=> npcyi yok eder.
+npc.unlock	=> npc kilidi açar.
+npc_get_job	=> npcnin cinsiyetini verir.
+
+/** new stuff **/
+npc.get_level0	=>npcnin levelini verir.
+npc.get_name0	=> npcnin adını verir.
+npc.get_vnum0	=> npcnin vnum verir.
+npc.get_pid0	=> npcnin pid değerini verir.
+npc.is_available0	=> npcs ise true dönzerir.
+/** new stuff end **/
