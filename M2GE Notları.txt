@@ -242,7 +242,7 @@ npc.lock	=> npcyi kilitler.
 npc.open_shop(LuaNumber shop_vnum)	=> npcnin sattığı ürünleri gösterir.
 npc.purge	=> npcyi yok eder.
 npc.unlock	=> npc kilidi açar.
-npc_get_job	=> npcnin cinsiyetini verir.
+npc.get_job	=> npcnin cinsiyetini verir.
 
 /** new stuff **/
 npc.get_level0	=>npcnin levelini verir.
