@@ -1,0 +1,231 @@
+========== 5. Ünite 59. Bölüm Notları ==========
+Metin2 clientinin çalışması için gerekli olan 4 ana pack dosyası vardır bunlar;
+-root
+-uiscript
+-locele_xx
+-ETC
+
+Bu 4 dosya şu işe yaramaktadır.
+Root: Oyunda yapılan işlemler ve pencerelerin işlevlerinin bulunduğu dosya.
+Uiscript: Pencerelerin tasarımının bulunduğu dosya. (Boyutu, butonlar vs)
+locale_xx: Dil dosyalarının bulunduğu dosya.
+ETC: Gui (pencere) kullanılan resimler ve pattern dosyalarının olduğu yer.
+
+
+Pack Dosyaları ve Client Arasında ki İletişim ve Bağ
+Client'i açtığınız anda pack/index dosyasında yazılanları çözümler ve root, uiscript, locale_xx ve etc dosyalarını 
+önyükler. Daha sonra ise diğer pack dosyalarını yüklemeye başlar.
+
+Root içindeki py dosyaları son kullanıcıdan aldığı verileri cliente, clientte serverden
+yaptığı bilgi alışverişin sonucunu son kullanıcıya aktarmak için root içindeki dosyaları kullanır.
+Bu bağlantıyı şu şablonla incelemek mümkün;
+
+								------------------------------
+								--							--
+								--			Server			--
+								--							--	
+								------------------------------
+										|		   /|\
+										|			|
+										|			|
+									   \|/			|
+	------------------			------------------------------			------------------
+	--				-- <------- --							--			--				--
+	--	   ROOT		-- 			--			CLIENT			-- -------> --	   ETC		--
+	--				-- -------> --							--  		--				--
+	------------------			------------------------------			------------------
+									|			   /|\  |
+									|				|	|
+									|				|	|
+								   \|/				|  \|/
+								--------------	--------------
+								--			--	--			--
+								-- Uiscript	--	-- Locale_x --
+								--			--	--			--
+								--------------	--------------
+
+========== 5. Ünite 60. Bölüm Notları ==========
+Root içindeki hangi dosyaların ne işe yaradığını özetliyoruz;
+atlasinfo.txt		=> Map dosylarının bilgileri.
+colorInfo.py		=> Oyunda kullanılan renklerin tutulduğu yer.
+consoleModule.py	=> Debug console
+constInfo.py		=> Global değişkenlerin bulunduğu yer.
+debugInfo.py		=> Clientin derlenen debug/release bilgilerini alır.
+dragonSoulRefineSettings	=> Simya taşlarının geliştirme ayarlarının tutulduğu kısım.
+emotion.py			=> Oyundaki duyguların bulunduğu.
+exception.py		=> Hata yazdırma.
+game.py				=> Tüm py dosyalarının bağlantı olduğu kısım diyebiliriz. Oyunun bulunduğu ana dosya.
+interfaceModule.py	=> Pencerelerin verileri burada tutulur.
+introCreate.py		=> Karakter oluşturma ekranı.
+introEmpire.py		=> Krallık seçme ekranı.
+introLoading.py		=> Giriş yaparken veya harita değiştirirken gelen yükleme ekranı.
+introLogin.py		=> Oyunu açtığımızda gelen server seçme ve giriş yapma paneli ekranı.
+introLogo.py		=> Orijinalde oyuna girişte oynatılan videoların ekranı.
+introSelect.py		=> Varolan karakterlerin seçim ekranı.
+localeInfo.py		=> Dil dosyalarına erişim için gerekli.
+mouseModule.py		=> Fare modülleri.
+musicInfo.py		=> Müzik bilgileri.
+networkModule.py	=> Oyuna giriş yaparken seçtiğiniz ch, server ve karakter bilgilerini tutar.
+npclist.txt			=> Mob, npc gibi karakterlerin modelleme, animasyon dosyalarının bulunduğu klasörler belirtilir.
+playerSettingModule.py	=> 	Karakterlerin yetenek, animasyon gibi bilgilerinin tutulduğu dosya.
+prototype.py		=> Uygulama başlatma.
+serverCommandParser.py	=> Bazı komutlar ile clientte yapılacak değişiklikler. Örnek: xmas_snow
+serverInfo.py		=> Server bilgilerinin bulunduğu dosya.
+stringCommander.py	=> Bilinmiyor.
+system.py			=> Sistem için gerekli dosyalar. Python yükleme vs.
+ui.py				=> Pencereler ve pencerelerde bulunan buton gibi elemanların oluşturulduğu dosya. Uiscript içinde yazılan verilerde burada belirtilen yönergelere göre işleniyor.
+uiAcce.py			=> ui.py ile benzer sadece bu dosya kuşak sistemiyle gelmiş.
+uiAffectShower.py	=> Sol üst tarafta karakterde bulunan efektleri gösteren dosya. (yang oto toplama, sevgi puanı vs.)
+uiAttachMetin.py	=> İtemlere metin taşları (örn: hız taşı) eklerken çıkan pencere.
+uiAuction.py		=> Bilinmiyor.
+uiAutoBan.py		=> Bilinmiyor.
+uiCandidate.py		=> Bilinmiyor.
+uiCharacter.py		=> Oyundayken N tuşuna bastığınızda gelen karakter penceresi.
+uiCharacterDetails.py	=> Official bonus gösterme sistemi ile gelen pencere. 
+uiChat.py			=> Ana chat penceresi.
+uiCommon.py			=> Ufak bilgi penceresi.
+uiCube.py			=> İksir ve kuşak oluştururken gelen pencere.
+uiDragonSoul.py		=> Simya penceresi.
+uiEquipmentDialog.py	=> Ekipmanların bulunduğu pencere
+uiEx.py				=> Extra ui.
+uiExchange.py		=> Oyuncu ile yapılan ticaret penceresi.
+uiGameButton.py		=> Oyun butonları.
+uiGameOption.py		=> Oyun Seçenekleri penceresi.
+uiGuild.py			=> Lonca penceresi.
+uiHelp.py			=> Yardım penceresi.
+uiInventory.py		=> Envanter penceresi. (I)
+uiMapNameShower.py	=> Bir yere ışınlandığınızda ana ekranda haritanın ismi.
+uiMessenger.py		=> Arkadaşlar listesinin olduğu pencere.
+uiMinimap.py		=> Sağ üstte bulunan harita.
+uiOption.py			=> Sistem seçenekleri (bu dosya kullanılmıyor.)
+uiParty.py			=> Oyuncularla grup oluşturduğunuzda sol tarafta grup üyeleri listesinin bulunduğu pencere.
+uiPhaseCurtain.py	=> Bilinmiyor.
+uiPickMoney.py		=> Envanterdeki yangları bölerken gelen pencere.
+uiPlayerGauge.py	=> Karakterin can, sp gibi değerlerini gösteren çubuk.
+uiPointReset.py		=> Bilinmiyor.
+uiPrivateShopBuilder.py	=> Pazar kurarken itemleri eklediğimiz pencere.
+uiQuest.py			=> Görevlere tıkladığınızda gelen pencere.
+uiRefine.py			=> İtemlere +basarken gelen pencere.
+uiRestart.py		=> Bilinmiypr.
+uiSafebox.py		=> Hesap deposu
+uiScriptLocale.py	=> Uiscript dosyalarında kullanılan dil işlemleri için.
+uiSelectItem.py		=> Bilinmiyor.
+uiSelectMusic.py	=> Sistem Seçeneklerinde müzik değiştirirken gelen pencere.
+uiShop.py			=> NPC ve pazarlarda alışveriş yaparken gelen pencere.
+uiSystem.py			=> ESC tuşuna bastığınızda gelen ayarlar penceresi.
+uiSystemOption.py	=> Sistem seçenekleri.
+uiTarget.py			=> Seçtiğiniz varlıklarda üst kısımda gözüken bilgi penceresi.
+uiTaskbar.py		=> Alt kısımda hp,sp, ext, yetenek, envanter butonlarının olduğu yer.
+uiTip.py			=> Bilgilendirme penceresi.
+uiTooltip.py		=> Birşeylerin üzerine geldiğinizde otomatik açılan pencere. (Örn: İtem efsunlarının yazıldığı yer.)
+uiUploadMark.py		=> Lonca resmi yüklerken resimleri seçtiğimiz pencere.
+uiWeb.py			=> Nesne market tuşuna tıkladığınızda bu dosya çalışır.
+uiWhisper.py		=> Fısıltı sohbeti penceresi.
+utils.py			=> Bilinmiyor.
+assassin_m.msm		=> Ninja erkek zırh, saç, kostüm vs. modellerinin isimleri yazar.
+assassin_w.msm		=> Ninja kız zırh, saç, kostüm vs. modellerinin isimleri yazar.
+shaman_m.msm		=> Şaman erkek zırh, saç, kostüm vs. modellerinin isimleri yazar.
+shaman_w.msm		=> Şaman kız zırh, saç, kostüm vs. modellerinin isimleri yazar.
+sura_m.msm			=> Sura erkek zırh, saç, kostüm vs. modellerinin isimleri yazar.
+sura_w.msm			=> Sura kız zırh, saç, kostüm vs. modellerinin isimleri yazar.
+warrior_m.msm		=> Savaşçı erkek zırh, saç, kostüm vs. modellerinin isimleri yazar.
+warrior_w.msm		=> Savaşçı kız zırh, saç, kostüm vs. modellerinin isimleri yazar.
+wolfman_m.msm		=> Wolfman kız zırh, saç, kostüm vs. modellerinin isimleri yazar.
+
+========== 5. Ünite 63. Bölüm Notları ==========
+Gui tasarlarken resimleri sıklıkla kullanacağız. Pencerelerimizde kullandığımız butonlar vs bazen çok ufak olduğu için sistemin hızlı 
+yüklenebilmeni için birden fazla parça tek bir resim dosyası altında bulunuyor. Bu resim dosyalarından belli bir alanı alabilmek için
+.sub dosyalarından faydalanıyor. Web tasarımında buna css split deniyor.
+
+Örnek bir .sub dosyası;
+title subImage
+version 1.0
+image "SkillCommon.dds"
+left 192
+top 128
+right 224
+bottom 160
+
+Bu dosyayı incelediğimizde değişkenlere tanımlanmış değerleri görüyoruz. Bunları anlatmadan önce
+image split mantığını anlayabilmeniz için boyutları ve koordinatları bilmeniz gerekiyor.
+
+Metin2 oyunu 3 boyutlu bir oyundur lakin oyundaki pencereler 2 boyutludur. Pencerelerin derinliği yok yani.
+Peki nedir bu boyutlar? Bu boyutlar sembolik olarak şu şekilde gösterilir.
+
+
+1 Boyut;
+-------------------------- 
+
+Burada sadece uzunluk var. Genişlik veya yükseklik yok.
+
+2 Boyut;
+-------------------------
+|						|
+|						|
+|			*			|
+|						|
+-------------------------
+Bu ise 2 boyutlu düzlemdir. Yani yükseklik (genişlik) y ile genişlik (uzunluk) x ile gösterilir. 
+Bu pencerede bir yere nokta koyduğumuzu farz edersek;
+Bu noktayı (x, y) cinsinden tarif ederiz. Mesela (100, 50) gibi.
+
+3 Boyut:
+Şimdi buraya güzel bir küp çizebilecek miyim bi bakiyim. :))
+
+	-----------------\
+	|\				| \
+	| \				|  \
+	|  \-----------------
+	|	|			|	|	
+	|	|		*	|	|
+	\---|-----------\	|
+	 \	|			 \	|
+	  \	|			  \	|
+	   \-----------------
+
+Karakterlerle ancak bu kadar çizebildim :)
+Neyse burada yükseklik z ile gösterilirken sol tarafa giden yer (genişlik) y, önümüze gelen yer ise (uzunluk) x olarak gösterilir.
+Bu noktayı şu şekilde göstermek mümkün (x, y, z). Mesela (5, 5, 10)
+
+Boyutları anladığımıza göre artık koordinat düzleminden bahsedebiliriz. Yukarıda boyutlarla ilgili verilen temsili görsellerde
+boyutları anlamamız içindi ama bu boyutlarda bulunduğumuz konumu hesaplamak için koordinat düzlemi kullanılır.
+
+					y (+y)
+					|7
+					|6
+					|5
+					|4
+			B-----	|3 ---- A
+			|		|2		|
+	(-x)	|		|1		|
+	----------------0------------------ x (+x)
+	-8	-6	-4	-2  |-1	2	4	6	8
+			|		|-2		|
+			|		|-3		|
+			C -----	|-4	---	D
+					|-5
+					|-6
+					|-7
+					(-y)
+					
+2 boyutlu düzlemlerde koordinat bu şekilde gösterilir. 3 boyutlular da derinlik z ile gösterilir. 3D modelleme programlarını kullandıysanız
+görmüşsünüz. Lakin biz ileri de yapacağımız pencere tasarımlarını 2 boyut üzerinden götüreeceğimiz için bunu öğreniyoruz.
+
+Koordinat düzlemi + olarak gösterilir ve en ortası 0 (nötr) olarak alınır. Dik çizgi y ile yan çizgi ise x ile gösterilir.
+Yan çizginin üstünde kalan çizgi y + olarak gösterilir. Altında olan ise - olarak.
+Dik çizginin sağ kısmında kalan çizgi x + olarak gösterilir. Solunda ki ise - olarak.
+
+Yukarıda ki koordinat düzeleminde 4 tane nokta belirledik. Bunlar A, B, C ve D şeklinde. Şimdi sırasıyla bunların bulunduğu konumun nasıl
+gösterildiğine bakalım.
+Bulunduğu konumu öğrenmek için hayali çizgilerle x ve y çizgilerine olan yakınlığını ve uzaklığını belirliyoruz. Şemadan da bunu görebilirsiniz.
+Belirtilen sayılara göre şu şekilde gösterilecektir;
+
+A = (4, 3) => Açıklaması: 4x, 3y
+B = (-4, 3) => Açıklaması: -4x, 3y
+C = (-4, -4) => Açıklaması: -4x, -4y
+D = (4, -4) => Açıklaması: 4x, -4y
+
+Bu şekilde iki boyutlu düzlemde herhangi bir noktada bulunan cismin konumunu bulabiliyoruz.
+Bizde pencereleri tasarlarken butonların bulunduğu yerini x ve y cinsinden ayarlayacağız.
+İlerleyen bölümlerde pencereler tasarlarken bunların nasıl kullanıldığını anlatacağım.
+Bunları size anlatmama sebebim ise o bölümlere geldiğimiz de bir şeyleri yaparken neden yapıldığının ana mantığını kavramanız.
