@@ -229,3 +229,48 @@ Bu şekilde iki boyutlu düzlemde herhangi bir noktada bulunan cismin konumunu b
 Bizde pencereleri tasarlarken butonların bulunduğu yerini x ve y cinsinden ayarlayacağız.
 İlerleyen bölümlerde pencereler tasarlarken bunların nasıl kullanıldığını anlatacağım.
 Bunları size anlatmama sebebim ise o bölümlere geldiğimiz de bir şeyleri yaparken neden yapıldığının ana mantığını kavramanız.
+
+5. Ünite 68
+Hizalamalar;
+Horizantal Align: Yata hizalama
+Vertical Align: Diket Hizalama
+
+5. Ünite 73 - Yazıları Renklendirme
+R: 0 ~ 255  
+G: 0 ~ 255
+B: 0 ~ 255
+
+Kırmızı renk oluşturmak istiyoruz.
+R: 255
+G: 0,
+B: 0,
+
+Burada tam kırmızı renk olmasını istediğim için diğer iki ana rengi komple kapattım ve elimize saf kırmızı ışık geçti. :)
+Ufak not
+Programlamada rgb şu şekilde yazılır. (r,g,b)
+rgba ise şu şekilde yazılır. (r,g,b,a)
+
+Kırmızı renk veriyoruz: (255, 0, 0)
+Sarı renk veriyoruz: (255, 255, 0)
+Magenta renk veriyoruz: (255, 0, 255)
+Ara renklerin rgb ve hex bilgileri için photoshop türevi programları kullanabilirsiniz.
+
+OpenGL Renk Kodu
+OpenGL renk kodları 0 ila 1 arasında değer alır. RGB'renklerini ise OpenGL formatına çevirmek için mevcut renk kodlarını
+255'e böleriz.
+
+R: 255/255  => 1
+G: 0/255    => 0
+B: 0/255    => 0
+
+Dipnot: Bazı değerlerin küsüratları çok uzun olabiliyor. Örn: 169/255 => 0.6627450980392157‬ küsürat kısımda ki 6 basamaktan sonralarını
+silip kullanın. Yoksa oyun açılırken uiscript dosyasının okunamadığından dolayı syserr verebilir.
+0.6627450980392157‬ => 0.662745 Böyle olacak. :)
+
+Metin2'de hex renk kodlarını kullanmak.
+"color" ile bir yazıya renk verirken photoshop gibi programlardan aldığımız renk kodunu
+0xFF yazdıktan sonra ekliyoruz.
+Örnek kırmızı renk kodu: 0xFFFF0000
+Örnek Sarı Renk Kodu: 0xFFFF00
+Not: FF => RGB'de 255'e denk gelir, 00 ise 0'a denk gelir. Hex kodları 0-9, A-Z'ye değer alır. İngilizce karakterler.
+
